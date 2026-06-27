@@ -1,0 +1,1311 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Hari Jandhyala | Executive Enterprise Architect</title>
+<meta name="description" content="Hari Jandhyala — Enterprise Architect, Data Architect, and Digital Transformation Leader. 25+ years architecting enterprise data platforms and cloud modernization programs for Fortune 500 organizations."/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&amp;family=Inter:wght@300..900&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        @font-face {
+            font-family: 'Geist Mono';
+            src: url('https://cdn.jsdelivr.net/npm/geist@1.0.3/dist/fonts/geist-mono/GeistMono-Regular.woff2') format('woff2');
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            background-color: #041329;
+            color: #d6e3ff;
+            overflow-x: hidden;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .app-page { display: none; }
+        .app-page.is-active { display: block; }
+
+        /* ============ Shared / global ============ */
+        .section-fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .section-fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .floating {
+            animation: floating 6s ease-in-out infinite;
+        }
+        @keyframes floating {
+            0% { transform: translate(0, 0px); }
+            50% { transform: translate(0, -15px); }
+            100% { transform: translate(0, 0px); }
+        }
+
+        .logo-grayscale {
+            filter: grayscale(100%) opacity(60%);
+            transition: all 0.4s ease;
+        }
+        .logo-grayscale:hover {
+            filter: grayscale(0%) opacity(100%);
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .tech-pill {
+            background: rgba(95, 251, 214, 0.1);
+            color: #38debb;
+            border: 1px solid rgba(95, 251, 214, 0.2);
+        }
+
+        .timeline-line {
+            background: linear-gradient(to bottom, transparent, #85948e 10%, #85948e 90%, transparent);
+        }
+
+        .dot-glow {
+            box-shadow: 0 0 15px rgba(56, 222, 187, 0.5);
+            background-color: #38debb;
+        }
+
+        .expand-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .card-active .expand-content {
+            max-height: 1000px;
+        }
+        .card-active .expand-icon {
+            color: #38debb;
+        }
+
+        .chip-glow {
+            background: rgba(246, 190, 61, 0.1);
+            border: 1px solid rgba(246, 190, 61, 0.2);
+        }
+
+        @keyframes subtle-float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        .float-anim {
+            animation: subtle-float 6s ease-in-out infinite;
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #041329; }
+        ::-webkit-scrollbar-thumb {
+            background: #1c2a41;
+            border-radius: 10px;
+            border: 2px solid #041329;
+        }
+        ::-webkit-scrollbar-thumb:hover { background: #27354c; }
+
+        /* ============ Page-scoped overrides (preserve each screen's exact look) ============ */
+
+        /* --- Portfolio (home) screen --- */
+        #page-portfolio .glass-card {
+            background: rgba(17, 32, 54, 0.6);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(133, 148, 142, 0.2);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+        }
+        #page-portfolio .inner-glow {
+            border-top: 1px solid rgba(216, 226, 255, 0.1);
+        }
+
+        /* --- Enterprise Programs / Case Studies screen --- */
+        #page-programs .glass-card {
+            background: rgba(17, 32, 54, 0.6);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(214, 227, 255, 0.1);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        #page-programs .glass-card:hover {
+            border-color: rgba(95, 251, 214, 0.3);
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+        }
+        #page-programs .inner-glow {
+            border-top: 1px solid rgba(214, 227, 255, 0.15);
+        }
+
+        /* --- Interactive Career Timeline screen --- */
+        #page-timeline .glass-card {
+            background: #112036;
+            border: 1px solid rgba(133, 148, 142, 0.2);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        #page-timeline .glass-card:hover {
+            border-color: #38debb;
+            background: #1c2a41;
+            transform: translateY(-4px);
+        }
+        #page-timeline .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "tertiary-fixed": "#d8e2ff",
+                      "inverse-primary": "#006b58",
+                      "primary": "#ffffff",
+                      "primary-fixed": "#5ffbd6",
+                      "on-secondary": "#402d00",
+                      "on-tertiary-fixed": "#091b39",
+                      "secondary-fixed": "#ffdea2",
+                      "primary-fixed-dim": "#38debb",
+                      "on-primary-fixed-variant": "#005142",
+                      "surface": "#041329",
+                      "error": "#ffb4ab",
+                      "on-error": "#690005",
+                      "inverse-on-surface": "#233148",
+                      "on-primary-fixed": "#002019",
+                      "tertiary-fixed-dim": "#b6c6ed",
+                      "background": "#041329",
+                      "on-tertiary-fixed-variant": "#374767",
+                      "surface-container-lowest": "#010e24",
+                      "on-primary-container": "#00725e",
+                      "surface-container-high": "#1c2a41",
+                      "on-tertiary": "#20304f",
+                      "surface-container-low": "#0d1c32",
+                      "on-background": "#d6e3ff",
+                      "primary-container": "#5ffbd6",
+                      "on-surface": "#d6e3ff",
+                      "on-secondary-fixed-variant": "#5c4200",
+                      "on-secondary-fixed": "#261900",
+                      "secondary-fixed-dim": "#f6be3d",
+                      "on-tertiary-container": "#556486",
+                      "secondary": "#f6be3d",
+                      "surface-tint": "#38debb",
+                      "outline-variant": "#3c4a45",
+                      "on-error-container": "#ffdad6",
+                      "surface-container": "#112036",
+                      "error-container": "#93000a",
+                      "secondary-container": "#c08e00",
+                      "surface-dim": "#041329",
+                      "on-surface-variant": "#bacac3",
+                      "on-primary": "#00382d",
+                      "outline": "#85948e",
+                      "tertiary-container": "#d8e2ff",
+                      "surface-container-highest": "#27354c",
+                      "tertiary": "#ffffff",
+                      "surface-variant": "#27354c",
+                      "on-secondary-container": "#3e2b00",
+                      "inverse-surface": "#d6e3ff",
+                      "surface-bright": "#2c3951"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "unit": "4px",
+                      "container-max": "1280px",
+                      "stack-lg": "2rem",
+                      "gutter": "24px",
+                      "stack-md": "1rem",
+                      "section-gap": "120px",
+                      "margin-mobile": "16px",
+                      "margin-desktop": "64px",
+                      "stack-sm": "0.5rem"
+              },
+              "fontFamily": {
+                      "headline-md": ["EB Garamond"],
+                      "display-lg": ["EB Garamond"],
+                      "body-lg": ["Inter"],
+                      "label-caps": ["Inter"],
+                      "mono-technical": ["Geist Mono"],
+                      "display-lg-mobile": ["EB Garamond"],
+                      "body-md": ["Inter"],
+                      "title-lg": ["Inter"],
+                      "label-sm": ["Inter"]
+              },
+              "fontSize": {
+                      "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "500"}],
+                      "display-lg": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                      "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                      "mono-technical": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                      "display-lg-mobile": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "title-lg": ["20px", {"lineHeight": "28px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                      "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}]
+              }
+            },
+          },
+        }
+    </script>
+</head>
+<body class="bg-background selection:bg-secondary/30">
+
+<div id="page-portfolio" class="app-page is-active">
+
+<!-- Top Navigation Bar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/60 backdrop-blur-xl border-b border-outline-variant/20 shadow-sm">
+<div class="max-w-[1200px] mx-auto flex justify-between items-center px-gutter h-20">
+<div class="font-headline-md text-headline-md font-semibold tracking-tight text-primary">
+            Hari Jandhyala
+        </div>
+<div class="hidden md:flex items-center gap-8">
+<a class="js-route text-primary font-bold border-b-2 border-primary pb-1 font-body-md text-body-md" href="#portfolio">Portfolio</a>
+<a class="js-route text-on-surface-variant font-medium hover:text-primary transition-colors duration-300 font-body-md text-body-md" href="#case-studies">Insights</a>
+<a class="js-route text-on-surface-variant font-medium hover:text-primary transition-colors duration-300 font-body-md text-body-md" href="#timeline">Advisory</a>
+<a class="js-route text-on-surface-variant font-medium hover:text-primary transition-colors duration-300 font-body-md text-body-md" href="#about">About</a>
+<button onclick="window.scrollTo({top:0,behavior:'smooth'})" class="ml-4 focus-within:ring-2 focus-within:ring-primary/50 text-primary">
+<span class="material-symbols-outlined">terminal</span>
+</button>
+</div>
+<!-- Mobile Menu Placeholder -->
+<div class="md:hidden">
+<span class="material-symbols-outlined text-primary">menu</span>
+</div>
+</div>
+</nav>
+<!-- Hero Section -->
+<header class="relative min-h-screen flex items-center pt-20 overflow-hidden">
+<!-- WebGL Shader Background -->
+
+<div class="max-w-[1200px] mx-auto px-gutter grid grid-cols-1 lg:grid-cols-12 gap-12 relative z-10">
+<div class="lg:col-span-7 flex flex-col justify-center">
+<div class="mb-6">
+<span class="font-label-caps text-label-caps text-secondary px-3 py-1 border border-secondary/30 rounded-full">EXECUTIVE ARCHITECTURE</span>
+</div>
+<h1 class="font-display-lg text-display-lg md:text-display-lg text-primary mb-2">
+                Hari Jandhyala
+            </h1>
+<h2 class="font-headline-md text-headline-md text-on-surface-variant mb-6 leading-tight">
+                Enterprise Architect | Data Architect | Digital Transformation Leader
+            </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl mb-10">
+                Architecting Enterprise Data Platforms and Cloud Modernization Programs for Fortune 500 Organizations for more than 25 Years.
+            </p>
+<div class="flex flex-wrap gap-4">
+<a href="mailto:jandhyala1000@yahoo.com?subject=Resume%20Request&body=Hi%20Hari%2C%0A%0APlease%20send%20over%20your%20latest%20executive%20resume.%0A%0AThanks!" class="bg-primary-container text-on-primary-container px-8 py-4 font-label-caps text-label-caps rounded-xl hover:brightness-110 transition-all flex items-center gap-2">
+                    DOWNLOAD EXECUTIVE RESUME
+                    <span class="material-symbols-outlined text-[18px]">download</span>
+</a>
+<a href="https://www.linkedin.com/in/harivjandhyala/" target="_blank" rel="noopener" class="border border-outline text-primary px-8 py-4 font-label-caps text-label-caps rounded-xl hover:bg-primary/5 transition-all">
+                    CONNECT ON LINKEDIN
+                </a>
+<a href="mailto:jandhyala1000@yahoo.com" class="text-primary px-6 py-4 font-label-caps text-label-caps rounded-xl hover:bg-white/5 transition-all">
+                    CONTACT
+                </a>
+</div>
+</div>
+<div class="lg:col-span-5 flex items-center justify-center relative">
+<!-- Floating Glassmorphic Frame for Portrait -->
+<div class="relative w-full max-w-md floating">
+<div class="absolute -inset-4 bg-secondary/5 blur-3xl rounded-full"></div>
+<div class="glass-card inner-glow p-3 rounded-xl overflow-hidden relative">
+<img alt="Professional executive portrait of Hari Jandhyala" class="w-full aspect-[4/5] object-cover rounded-lg" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTvjS7S9aD5DZEiuu-sjJjqgUvLDNVQrpsfcpKObsjnZJA9J-_0sFPf0acGsVU8LRlzvlQKq0fg2N8iSAE9n0-cr-_GB0bM8y8xVJKcWrrjSo3myGRVAcDRXn2vIGcQ2n-kViM-Vp6iN5hPvEmY3KtxvIZF3xBACiptOBpLWm_Nxrg5TAU57Be5KGO5F7CHCsapVNaGLb6oKgNt-CF5OICpWRp9J3GJ0loSZwcXr722eRHVDWFLNhMhwNCNsT_lIBptWuyeZvcGtfW"/>
+<div class="absolute bottom-6 left-6 right-6 p-4 glass-card rounded-lg border border-white/10">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-secondary flex items-center justify-center">
+<span class="material-symbols-outlined text-on-secondary">verified</span>
+</div>
+<div>
+<p class="font-label-caps text-label-caps text-primary">STATUS</p>
+<p class="font-mono-technical text-mono-technical text-secondary">ADVISORY AVAILABLE</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</header>
+<!-- Executive Metrics -->
+<section class="py-24 bg-surface-container-lowest relative overflow-hidden">
+<div class="max-w-[1200px] mx-auto px-gutter">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
+<div class="section-fade-in">
+<div class="font-display-lg text-display-lg text-primary mb-2 count-up" data-target="25">25+</div>
+<div class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest">Years Experience</div>
+</div>
+<div class="section-fade-in">
+<div class="font-display-lg text-display-lg text-primary mb-2 count-up" data-target="50">50+</div>
+<div class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest">Fortune 500 Global Clients</div>
+</div>
+<div class="section-fade-in">
+<div class="font-display-lg text-display-lg text-primary mb-2">$<span class="count-up" data-target="100">100</span>M+</div>
+<div class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest">Business Value Delivered</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Brand Showcase -->
+<section class="py-20 border-y border-outline-variant/10 bg-background">
+<div class="max-w-[1200px] mx-auto px-gutter">
+<p class="font-label-caps text-label-caps text-center text-on-surface-variant mb-12 uppercase tracking-[0.2em]">Trusted by Global Industry Leaders</p>
+<div class="flex flex-wrap justify-center items-center gap-12 md:gap-24">
+<div class="font-headline-md text-headline-md logo-grayscale text-on-surface-variant font-bold">ORACLE</div>
+<div class="font-headline-md text-headline-md logo-grayscale text-on-surface-variant font-bold italic">Pfizer</div>
+<div class="font-headline-md text-headline-md logo-grayscale text-on-surface-variant font-bold tracking-tighter">BOEING</div>
+<div class="font-headline-md text-headline-md logo-grayscale text-on-surface-variant font-medium">verizon</div>
+<div class="font-headline-md text-headline-md logo-grayscale text-on-surface-variant font-extrabold italic">Walmart</div>
+</div>
+</div>
+</section>
+<!-- Executive Biography & Domains -->
+<section id="about" class="py-section-gap relative bg-background">
+<div class="max-w-[1200px] mx-auto px-gutter grid grid-cols-1 lg:grid-cols-2 gap-24 items-start">
+<div class="section-fade-in">
+<h3 class="font-label-caps text-label-caps text-secondary mb-4">THE ARCHITECT'S VISION</h3>
+<h2 class="font-display-lg text-[48px] leading-tight text-primary mb-8 font-headline-md">
+                Two Decades of Engineering Digital Resiliency.
+            </h2>
+<div class="space-y-6 font-body-lg text-body-lg text-on-surface-variant">
+<p>
+                    Hari Jandhyala stands at the intersection of technical excellence and executive strategy. As an Enterprise Architect, he has spent over 25 years dismantling complex legacy structures and rebuilding them as high-performance, cloud-native ecosystems for global Fortune 500s.
+                </p>
+<p>
+                    His career is defined by leading high-stakes Enterprise Architecture and Cloud Transformation initiatives for the world's most complex organizations. From revolutionizing pharmaceutical supply chains at Pfizer to optimizing aerospace data flows at Boeing, Hari bridges the gap between the boardroom and the server room.
+                </p>
+<p>
+                    Currently focused on the convergence of Large Scale Data Platforms and AI integration, Hari continues to define the blueprints for the next era of enterprise computing.
+                </p>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-6 section-fade-in">
+<!-- Bento Grid Style Experience Cards -->
+<div class="glass-card p-8 rounded-xl inner-glow flex flex-col gap-4">
+<span class="material-symbols-outlined text-secondary text-4xl">medical_services</span>
+<h4 class="font-headline-md text-headline-md text-primary text-2xl">Healthcare</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Pharma supply chain security and FDA-compliant data infrastructures.</p>
+</div>
+<div class="glass-card p-8 rounded-xl inner-glow flex flex-col gap-4">
+<span class="material-symbols-outlined text-secondary text-4xl">shopping_cart</span>
+<h4 class="font-headline-md text-headline-md text-primary text-2xl">Retail</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Omni-channel cloud commerce at massive scale for global retailers.</p>
+</div>
+<div class="glass-card p-8 rounded-xl inner-glow flex flex-col gap-4">
+<span class="material-symbols-outlined text-secondary text-4xl">router</span>
+<h4 class="font-headline-md text-headline-md text-primary text-2xl">Telecom</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">5G infrastructure architecture and real-time billing data pipelines.</p>
+</div>
+<div class="glass-card p-8 rounded-xl inner-glow flex flex-col gap-4">
+<span class="material-symbols-outlined text-secondary text-4xl">flight_takeoff</span>
+<h4 class="font-headline-md text-headline-md text-primary text-2xl">Aerospace</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Technical leadership for safety-critical aerospace engineering data systems.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Project Highlight Section -->
+<section class="py-section-gap bg-surface-container-low">
+<div class="max-w-[1200px] mx-auto px-gutter">
+<div class="flex justify-between items-end mb-16 section-fade-in">
+<div>
+<h2 class="font-headline-md text-headline-md text-primary">Case Studies</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Architectural triumphs across the enterprise landscape.</p>
+</div>
+<a href="#case-studies" class="js-route text-primary flex items-center gap-2 font-label-caps text-label-caps hover:gap-4 transition-all duration-300">
+                VIEW ALL PROJECTS <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+<!-- Large Card 1 -->
+<div class="group relative overflow-hidden rounded-xl aspect-[16/9] glass-card section-fade-in">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110 opacity-30" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAZZbXNxdFKzXA8wLcpWXAl34YQ9RyUHHOgJoRSs--_8_C3RcaHl83iaF4pXpkNFA2Uf1wXP4y73VVAZKQiXQcdPLR6yEIc8UbQuPGGkbaPLTY-rVizzpRrDnSKgZNJ35KZ4YhQ1Ftya_b8zhDsmPdLrg3VWQmZ9DziOuUDLjzosnzo-WklbndmgneXSPS5Oowu3YKsi_V6SP48vFRyWJo_kWYz_-bLEQF7wHXssrzQkMzzgZFD6C2Qr-CkQN9YR5Ic3k4O4nbbxCm5')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/40 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-10">
+<div class="flex gap-2 mb-4">
+<span class="bg-secondary/20 text-secondary text-[10px] font-label-caps px-2 py-0.5 rounded border border-secondary/30">CLOUD MODERNIZATION</span>
+<span class="bg-secondary/20 text-secondary text-[10px] font-label-caps px-2 py-0.5 rounded border border-secondary/30">AZURE</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-2">Global Data Lakehouse</h3>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-sm">Consolidating 40+ legacy systems into a unified Azure-based data platform for a global logistics firm.</p>
+</div>
+</div>
+<!-- Large Card 2 -->
+<div class="group relative overflow-hidden rounded-xl aspect-[16/9] glass-card section-fade-in">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110 opacity-30" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAHTKgqRS9IJrBrQx956titVIH0au-iytEMJY3fs0uqdAyKJF1cgZhNpF3uEZAurtKzBGbmD8dX1dZL-JKzemdQYEQyROrSDAynELIiRjHZVHoRGinqROxxEXReRWyWvmu8QunOutXI80EwR_rhCx4nfkmyAY0FKeEw1AueXNtO_A6D39AXhtmtmQI5hVujFweeah_jCYqlmIWIYJxiJxuFKxfeMlDbc0rCh4PvxzJfrvXHx8tnG4J1JAjdnsf8DXDZ9w-XRkwE4h_X')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/40 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-10">
+<div class="flex gap-2 mb-4">
+<span class="bg-secondary/20 text-secondary text-[10px] font-label-caps px-2 py-0.5 rounded border border-secondary/30">ENTERPRISE AI</span>
+<span class="bg-secondary/20 text-secondary text-[10px] font-label-caps px-2 py-0.5 rounded border border-secondary/30">LLM OPS</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-2">AI Governance Framework</h3>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-sm">Implementing enterprise-wide AI compliance and architectural standards for a Fortune 100 Financial Service.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-surface border-t border-outline-variant/10 w-full py-24">
+<div class="max-w-[1200px] mx-auto px-gutter">
+<div class="flex flex-col md:flex-row justify-between items-start gap-12 mb-20">
+<div class="max-w-md">
+<div class="font-headline-md text-headline-md text-primary mb-6">Hari Jandhyala</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                    Building the foundations of the future through meticulous enterprise architecture and visionary technical leadership.
+                </p>
+</div>
+<div class="grid grid-cols-2 gap-16">
+<div>
+<h5 class="font-label-caps text-label-caps text-primary mb-6">EXPLORE</h5>
+<ul class="space-y-4 font-body-md text-body-md text-on-surface-variant">
+<li><a class="js-route hover:text-primary transition-colors" href="#portfolio">Portfolio</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Speaking</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">White Papers</a></li>
+<li><a class="hover:text-primary transition-colors" href="mailto:jandhyala1000@yahoo.com">Contact</a></li>
+<li><a class="hover:text-primary transition-colors" href="tel:+19192443997">+1 919-244-3997</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-label-caps text-label-caps text-primary mb-6">CONNECT</h5>
+<ul class="space-y-4 font-body-md text-body-md text-on-surface-variant">
+<li><a class="hover:text-primary transition-colors" href="https://www.linkedin.com/in/harivjandhyala/" target="_blank" rel="noopener">LinkedIn</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">X / Twitter</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">GitHub</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="flex flex-col md:flex-row justify-between items-center pt-10 border-t border-outline-variant/5 gap-stack-md">
+<div class="font-label-caps text-label-caps text-on-surface-variant">
+                © 2024 Hari Jandhyala — Executive Architecture
+            </div>
+<div class="flex gap-8 font-label-caps text-label-caps">
+<a class="text-on-surface-variant hover:text-primary underline-offset-4 hover:underline transition-all duration-200" href="https://www.linkedin.com/in/harivjandhyala/" target="_blank" rel="noopener">LinkedIn</a>
+<a class="text-on-surface-variant hover:text-primary underline-offset-4 hover:underline transition-all duration-200" href="mailto:jandhyala1000@yahoo.com">Contact</a>
+<a class="text-on-surface-variant hover:text-primary underline-offset-4 hover:underline transition-all duration-200" href="tel:+19192443997">+1 919-244-3997</a>
+<span class="text-primary-fixed-dim">Advisory Status: Available</span>
+</div>
+</div>
+</div>
+</footer>
+<script>
+    // Intersection Observer for Section Reveal
+    const observerOptions = {
+        threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+               
+                // Trigger counters if visible
+                const counters = entry.target.querySelectorAll('.count-up');
+                counters.forEach(counter => {
+                    const targetText = counter.getAttribute('data-target');
+                    const target = parseFloat(targetText);
+                    const speed = 2000; // 2 seconds
+                    const increment = target / (speed / 16);
+                   
+                    let current = 0;
+                    const update = () => {
+                        current += increment;
+                        if (current < target) {
+                            counter.innerText = Math.ceil(current);
+                            requestAnimationFrame(update);
+                        } else {
+                            counter.innerText = target;
+                        }
+                    };
+                    update();
+                });
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.section-fade-in').forEach(section => {
+        observer.observe(section);
+    });
+
+    // Smooth scrolling (skip nav/CTA links handled by the global page router)
+    document.querySelectorAll('a[href^="#"]:not(.js-route)').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            if(targetId !== "#") {
+                const el = document.querySelector(targetId);
+                if (el) el.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    });
+</script>
+
+</div>
+
+<div id="page-programs" class="app-page">
+
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl border-b border-outline-variant/20 shadow-sm">
+<div class="max-w-[1200px] mx-auto flex justify-between items-center px-gutter h-20">
+<div class="font-headline-md text-headline-md font-medium tracking-tight text-primary">
+                Hari Jandhyala
+            </div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="js-route font-body-md text-body-md text-on-surface-variant font-medium hover:text-primary transition-colors duration-300" href="#portfolio">Portfolio</a>
+<a class="js-route font-body-md text-body-md text-primary font-bold border-b-2 border-primary-fixed pb-1" href="#case-studies">Insights</a>
+<a class="js-route font-body-md text-body-md text-on-surface-variant font-medium hover:text-primary transition-colors duration-300" href="#timeline">Advisory</a>
+<a class="js-route font-body-md text-body-md text-on-surface-variant font-medium hover:text-primary transition-colors duration-300" href="#about">About</a>
+</nav>
+<div class="flex items-center gap-4">
+<button onclick="window.scrollTo({top:0,behavior:'smooth'})" class="material-symbols-outlined text-primary-fixed hover:text-primary transition-colors">terminal</button>
+</div>
+</div>
+</header>
+<main class="pt-32 pb-24">
+<!-- Hero Section -->
+<section class="max-w-[1200px] mx-auto px-gutter mb-24">
+<div class="max-w-3xl">
+<span class="font-label-caps text-label-sm text-secondary tracking-widest mb-4 block uppercase">Strategic Governance</span>
+<h1 class="font-display-lg text-display-lg mb-8 leading-tight">Enterprise Programs &amp; Architecture</h1>
+<p class="font-body-md text-title-lg text-on-surface-variant leading-relaxed">
+                    A curated selection of large-scale digital transformation initiatives. These programs represent the intersection of enterprise business strategy and complex software architecture at Fortune 500 scale.
+                </p>
+</div>
+</section>
+<!-- Case Studies Container -->
+<div class="max-w-[1200px] mx-auto px-gutter space-y-24">
+<!-- Case Study 1: SAG-AFTRA -->
+<div class="reveal grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+<div class="lg:col-span-5 sticky top-28">
+<span class="font-mono-technical text-mono-technical text-primary-fixed-dim mb-2 block">Case Study 01</span>
+<h2 class="font-headline-md text-headline-md mb-4">SAG-AFTRA</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 italic border-l-2 border-primary-fixed/30 pl-4">
+                        "Architecting a resilient, automated supply chain for the world's largest labor union representing 160,000+ performers."
+                    </p>
+<div class="space-y-4">
+<div>
+<h4 class="font-label-caps text-label-sm text-primary mb-2 uppercase">Business Problem</h4>
+<p class="font-body-md text-body-md text-on-surface-variant/80">Legacy systems lacked the agility to handle complex residual payments and global procurement, leading to operational bottlenecks and reporting delays.</p>
+</div>
+<div>
+<h4 class="font-label-caps text-label-sm text-primary mb-2 uppercase">Business Outcomes</h4>
+<ul class="space-y-2 font-body-md text-body-md text-secondary">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-[16px]">check_circle</span> 40% reduction in procurement cycle time</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-[16px]">check_circle</span> Unified financial reporting across 25+ locals</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="lg:col-span-7">
+<div class="glass-card inner-glow rounded-xl overflow-hidden p-8">
+<div class="flex justify-between items-center mb-8">
+<h3 class="font-label-caps text-label-sm tracking-widest text-on-surface-variant uppercase">Architecture: Oracle Fusion SCM Cloud</h3>
+<div class="flex gap-2">
+<span class="tech-pill px-3 py-1 rounded-full font-label-caps text-[10px]">ERP</span>
+<span class="tech-pill px-3 py-1 rounded-full font-label-caps text-[10px]">CLOUD</span>
+</div>
+</div>
+<!-- Diagram Placeholder -->
+<div class="w-full aspect-video rounded-lg border border-outline-variant/30 bg-surface-container-lowest/50 flex flex-col items-center justify-center relative overflow-hidden group">
+<div class="z-10 text-center px-6">
+<span class="material-symbols-outlined text-4xl text-primary-fixed mb-4 block">hub</span>
+<p class="font-mono-technical text-mono-technical text-on-surface-variant">Interactive Architecture Diagram</p>
+<p class="text-[10px] text-outline-variant mt-2 uppercase tracking-tighter">System Integration Node v2.4</p>
+</div>
+</div>
+<div class="mt-8">
+<h4 class="font-label-caps text-label-sm text-primary mb-4 uppercase">Tech Stack</h4>
+<div class="flex flex-wrap gap-3">
+<div class="flex items-center gap-2 bg-surface-container-high px-4 py-2 rounded-lg border border-outline-variant/10">
+<span class="material-symbols-outlined text-[20px] text-primary-fixed-dim">database</span>
+<span class="font-mono-technical text-mono-technical">Oracle Fusion</span>
+</div>
+<div class="flex items-center gap-2 bg-surface-container-high px-4 py-2 rounded-lg border border-outline-variant/10">
+<span class="material-symbols-outlined text-[20px] text-primary-fixed-dim">api</span>
+<span class="font-mono-technical text-mono-technical">REST API Gateway</span>
+</div>
+<div class="flex items-center gap-2 bg-surface-container-high px-4 py-2 rounded-lg border border-outline-variant/10">
+<span class="material-symbols-outlined text-[20px] text-primary-fixed-dim">security</span>
+<span class="font-mono-technical text-mono-technical">SSO Federation</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Case Study 2: Boeing -->
+<div class="reveal grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+<div class="lg:col-span-5 order-1 lg:order-2 sticky top-28">
+<span class="font-mono-technical text-mono-technical text-primary-fixed-dim mb-2 block">Case Study 02</span>
+<h2 class="font-headline-md text-headline-md mb-4">Boeing</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 italic border-l-2 border-primary-fixed/30 pl-4">
+                        "Standardizing cloud transformation for mission-critical aerospace infrastructure and supply chain logistics."
+                    </p>
+<div class="space-y-4">
+<div>
+<h4 class="font-label-caps text-label-sm text-primary mb-2 uppercase">Business Problem</h4>
+<p class="font-body-md text-body-md text-on-surface-variant/80">Hyper-fragmented IT ecosystem with 400+ legacy apps hindered real-time visibility into the global parts supply chain.</p>
+</div>
+<div>
+<h4 class="font-label-caps text-label-sm text-primary mb-2 uppercase">Business Outcomes</h4>
+<ul class="space-y-2 font-body-md text-body-md text-secondary">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-[16px]">check_circle</span> 25% OpEx savings through cloud consolidation</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-[16px]">check_circle</span> Zero-downtime migration of high-availability clusters</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="lg:col-span-7 order-2 lg:order-1">
+<div class="glass-card inner-glow rounded-xl overflow-hidden p-8">
+<div class="flex justify-between items-center mb-8">
+<h3 class="font-label-caps text-label-sm tracking-widest text-on-surface-variant uppercase">Cloud Transformation Matrix</h3>
+<div class="flex gap-2">
+<span class="tech-pill px-3 py-1 rounded-full font-label-caps text-[10px]">AZURE</span>
+<span class="tech-pill px-3 py-1 rounded-full font-label-caps text-[10px]">HYBRID</span>
+</div>
+</div>
+<div class="w-full aspect-video rounded-lg border border-outline-variant/30 bg-surface-container-lowest/50 flex flex-col items-center justify-center relative overflow-hidden">
+<div class="z-10 text-center px-6">
+<span class="material-symbols-outlined text-4xl text-primary-fixed mb-4 block">cloud_sync</span>
+<p class="font-mono-technical text-mono-technical text-on-surface-variant">Global Cloud Node Distribution</p>
+<p class="text-[10px] text-outline-variant mt-2 uppercase tracking-tighter">Latency: 12ms | Resilience: 99.999%</p>
+</div>
+</div>
+<div class="mt-8">
+<h4 class="font-label-caps text-label-sm text-primary mb-4 uppercase">Tech Stack</h4>
+<div class="flex flex-wrap gap-3">
+<div class="flex items-center gap-2 bg-surface-container-high px-4 py-2 rounded-lg border border-outline-variant/10">
+<span class="material-symbols-outlined text-[20px] text-primary-fixed-dim">architecture</span>
+<span class="font-mono-technical text-mono-technical">Azure Kubernetes</span>
+</div>
+<div class="flex items-center gap-2 bg-surface-container-high px-4 py-2 rounded-lg border border-outline-variant/10">
+<span class="material-symbols-outlined text-[20px] text-primary-fixed-dim">analytics</span>
+<span class="font-mono-technical text-mono-technical">Power BI Enterprise</span>
+</div>
+<div class="flex items-center gap-2 bg-surface-container-high px-4 py-2 rounded-lg border border-outline-variant/10">
+<span class="material-symbols-outlined text-[20px] text-primary-fixed-dim">settings_input_component</span>
+<span class="font-mono-technical text-mono-technical">Terraform IaC</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Case Study 3: Pfizer -->
+<div class="reveal grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+<div class="lg:col-span-5 sticky top-28">
+<span class="font-mono-technical text-mono-technical text-primary-fixed-dim mb-2 block">Case Study 03</span>
+<h2 class="font-headline-md text-headline-md mb-4">Pfizer</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 italic border-l-2 border-primary-fixed/30 pl-4">
+                        "Modernizing data architecture for rapid vaccine distribution and clinical trial analytics."
+                    </p>
+<div class="space-y-4">
+<div>
+<h4 class="font-label-caps text-label-sm text-primary mb-2 uppercase">Business Problem</h4>
+<p class="font-body-md text-body-md text-on-surface-variant/80">Massive data silos prevented unified real-time tracking of drug efficacy and distribution metrics across global territories.</p>
+</div>
+<div>
+<h4 class="font-label-caps text-label-sm text-primary mb-2 uppercase">Business Outcomes</h4>
+<ul class="space-y-2 font-body-md text-body-md text-secondary">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-[16px]">check_circle</span> Real-time data fabric across 4 continents</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-[16px]">check_circle</span> Compliance achieved for stringent GDPR &amp; HIPAA audits</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="lg:col-span-7">
+<div class="glass-card inner-glow rounded-xl overflow-hidden p-8">
+<div class="flex justify-between items-center mb-8">
+<h3 class="font-label-caps text-label-sm tracking-widest text-on-surface-variant uppercase">Enterprise Data Architecture</h3>
+<div class="flex gap-2">
+<span class="tech-pill px-3 py-1 rounded-full font-label-caps text-[10px]">BIG DATA</span>
+<span class="tech-pill px-3 py-1 rounded-full font-label-caps text-[10px]">HEALTHCARE</span>
+</div>
+</div>
+<div class="w-full aspect-video rounded-lg border border-outline-variant/30 bg-surface-container-lowest/50 flex flex-col items-center justify-center relative overflow-hidden">
+<div class="z-10 text-center px-6">
+<span class="material-symbols-outlined text-4xl text-primary-fixed mb-4 block">biotech</span>
+<p class="font-mono-technical text-mono-technical text-on-surface-variant">Global Data Mesh Visualization</p>
+<p class="text-[10px] text-outline-variant mt-2 uppercase tracking-tighter">Volume: 4.2 PB/day | Throughput: 1GB/s</p>
+</div>
+</div>
+<div class="mt-8">
+<h4 class="font-label-caps text-label-sm text-primary mb-4 uppercase">Tech Stack</h4>
+<div class="flex flex-wrap gap-3">
+<div class="flex items-center gap-2 bg-surface-container-high px-4 py-2 rounded-lg border border-outline-variant/10">
+<span class="material-symbols-outlined text-[20px] text-primary-fixed-dim">dataset</span>
+<span class="font-mono-technical text-mono-technical">Snowflake Warehouse</span>
+</div>
+<div class="flex items-center gap-2 bg-surface-container-high px-4 py-2 rounded-lg border border-outline-variant/10">
+<span class="material-symbols-outlined text-[20px] text-primary-fixed-dim">memory</span>
+<span class="font-mono-technical text-mono-technical">Apache Spark ML</span>
+</div>
+<div class="flex items-center gap-2 bg-surface-container-high px-4 py-2 rounded-lg border border-outline-variant/10">
+<span class="material-symbols-outlined text-[20px] text-primary-fixed-dim">shield</span>
+<span class="font-mono-technical text-mono-technical">Collibra Governance</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Case Study 4: Best Buy -->
+<div class="reveal grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+<div class="lg:col-span-5 order-1 lg:order-2 sticky top-28">
+<span class="font-mono-technical text-mono-technical text-primary-fixed-dim mb-2 block">Case Study 04</span>
+<h2 class="font-headline-md text-headline-md mb-4">Best Buy</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 italic border-l-2 border-primary-fixed/30 pl-4">
+                        "Optimizing retail omnichannel supply chain and inventory management for peak-load performance."
+                    </p>
+<div class="space-y-4">
+<div>
+<h4 class="font-label-caps text-label-sm text-primary mb-2 uppercase">Business Problem</h4>
+<p class="font-body-md text-body-md text-on-surface-variant/80">Scaling digital retail operations to handle Black Friday traffic spikes while maintaining real-time inventory accuracy across 1000+ stores.</p>
+</div>
+<div>
+<h4 class="font-label-caps text-label-sm text-primary mb-2 uppercase">Business Outcomes</h4>
+<ul class="space-y-2 font-body-md text-body-md text-secondary">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-[16px]">check_circle</span> 99.99% uptime during peak holiday traffic</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-[16px]">check_circle</span> 15% reduction in last-mile delivery costs</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="lg:col-span-7 order-2 lg:order-1">
+<div class="glass-card inner-glow rounded-xl overflow-hidden p-8">
+<div class="flex justify-between items-center mb-8">
+<h3 class="font-label-caps text-label-sm tracking-widest text-on-surface-variant uppercase">Omnichannel Supply Chain Grid</h3>
+<div class="flex gap-2">
+<span class="tech-pill px-3 py-1 rounded-full font-label-caps text-[10px]">RETAIL</span>
+<span class="tech-pill px-3 py-1 rounded-full font-label-caps text-[10px]">SCALABILITY</span>
+</div>
+</div>
+<div class="w-full aspect-video rounded-lg border border-outline-variant/30 bg-surface-container-lowest/50 flex flex-col items-center justify-center relative overflow-hidden">
+<div class="z-10 text-center px-6">
+<span class="material-symbols-outlined text-4xl text-primary-fixed mb-4 block">inventory_2</span>
+<p class="font-mono-technical text-mono-technical text-on-surface-variant">Inventory Propagation Flow</p>
+<p class="text-[10px] text-outline-variant mt-2 uppercase tracking-tighter">Sync Rate: 250ms | Scale: 12M SKUs</p>
+</div>
+</div>
+<div class="mt-8">
+<h4 class="font-label-caps text-label-sm text-primary mb-4 uppercase">Tech Stack</h4>
+<div class="flex flex-wrap gap-3">
+<div class="flex items-center gap-2 bg-surface-container-high px-4 py-2 rounded-lg border border-outline-variant/10">
+<span class="material-symbols-outlined text-[20px] text-primary-fixed-dim">bolt</span>
+<span class="font-mono-technical text-mono-technical">GCP Cloud Run</span>
+</div>
+<div class="flex items-center gap-2 bg-surface-container-high px-4 py-2 rounded-lg border border-outline-variant/10">
+<span class="material-symbols-outlined text-[20px] text-primary-fixed-dim">lan</span>
+<span class="font-mono-technical text-mono-technical">Kafka Streams</span>
+</div>
+<div class="flex items-center gap-2 bg-surface-container-high px-4 py-2 rounded-lg border border-outline-variant/10">
+<span class="material-symbols-outlined text-[20px] text-primary-fixed-dim">account_tree</span>
+<span class="font-mono-technical text-mono-technical">SAP Hybris</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- CTA Section -->
+<section class="mt-40 text-center max-w-[1200px] mx-auto px-gutter">
+<div class="glass-card inner-glow py-20 px-8 rounded-2xl relative overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-tr from-primary-fixed/5 to-transparent -z-10"></div>
+<h3 class="font-display-lg text-[40px] mb-6">Need Architectural Clarity?</h3>
+<p class="font-body-md text-title-lg text-on-surface-variant max-w-xl mx-auto mb-10">
+                    Transforming enterprise complexity into structured, scalable solutions requires more than just tools—it requires vision.
+                </p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center">
+<a class="px-8 py-4 bg-primary-fixed text-on-primary-fixed font-label-caps text-label-sm tracking-widest rounded-lg hover:bg-primary transition-all font-bold uppercase" href="mailto:jandhyala1000@yahoo.com?subject=Advisory%20Inquiry">Schedule Advisory</a>
+<a class="js-route px-8 py-4 border border-outline-variant/50 font-label-caps text-label-sm tracking-widest rounded-lg hover:border-primary-fixed hover:text-primary-fixed transition-all uppercase" href="#timeline">View All Labs</a>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-12 border-t border-outline-variant/10 bg-surface-container-lowest">
+<div class="max-w-[1200px] mx-auto flex flex-col md:flex-row justify-between items-center px-gutter gap-8">
+<div class="font-headline-md text-headline-md text-primary">Hari Jandhyala</div>
+<div class="font-body-md text-body-md font-label-caps text-label-sm text-on-surface-variant flex gap-8 uppercase">
+<a class="hover:text-primary-fixed underline-offset-4 hover:underline transition-all duration-200" href="https://www.linkedin.com/in/harivjandhyala/" target="_blank" rel="noopener">LinkedIn</a>
+<a class="hover:text-primary-fixed underline-offset-4 hover:underline transition-all duration-200" href="mailto:jandhyala1000@yahoo.com">Contact</a>
+<a class="hover:text-primary-fixed underline-offset-4 hover:underline transition-all duration-200" href="tel:+19192443997">+1 919-244-3997</a>
+<span class="text-secondary opacity-80">Advisory Status: Available</span>
+</div>
+<div class="font-body-md text-body-md text-on-surface-variant opacity-60">
+                © 2024 Hari Jandhyala — Executive Architecture
+            </div>
+</div>
+</footer>
+<script>
+        // Reveal Animations on Scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Subtle micro-interactions
+        document.querySelectorAll('.glass-card').forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+               
+                card.style.setProperty('--mouse-x', `${x}px`);
+                card.style.setProperty('--mouse-y', `${y}px`);
+            });
+        });
+    </script>
+
+</div>
+
+<div id="page-timeline" class="app-page">
+
+<!-- Top Navigation Bar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl border-b border-outline-variant/20 shadow-sm">
+<div class="max-w-[1200px] mx-auto flex justify-between items-center px-gutter h-20">
+<div class="font-headline-md text-headline-md font-medium tracking-tight text-primary">
+                Hari Jandhyala
+            </div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="js-route text-on-surface-variant font-medium hover:text-primary transition-colors duration-300" href="#portfolio">Portfolio</a>
+<a class="js-route text-secondary font-bold border-b-2 border-secondary pb-1" href="#case-studies">Insights</a>
+<a class="js-route text-on-surface-variant font-medium hover:text-primary transition-colors duration-300" href="#timeline">Advisory</a>
+<a class="js-route text-on-surface-variant font-medium hover:text-primary transition-colors duration-300" href="#about">About</a>
+<div onclick="window.scrollTo({top:0,behavior:'smooth'})" class="ml-4 p-2 cursor-pointer hover:bg-surface-container rounded-full transition-all">
+<span class="material-symbols-outlined text-primary">terminal</span>
+</div>
+</div>
+</div>
+</nav>
+<!-- Hero / Header -->
+<header class="pt-40 pb-20 px-gutter max-w-[1200px] mx-auto relative overflow-hidden">
+<div class="relative z-10">
+<h1 class="font-display-lg text-display-lg mb-4 max-w-2xl text-primary">
+                Executive Architecture <br/>
+<span class="italic text-secondary">Timeline.</span>
+</h1>
+<p class="font-body-md text-title-lg text-on-surface-variant max-w-xl">
+                A strategic record of enterprise transformations, high-stakes infrastructure, and technical leadership across global markets.
+            </p>
+</div>
+<div class="absolute -top-20 -right-20 w-96 h-96 bg-primary-container/10 rounded-full blur-[100px]"></div>
+</header>
+<!-- Main Content: Interactive Timeline -->
+<main class="max-w-[1200px] mx-auto px-gutter mb-40">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 relative">
+<!-- Sidebar: Global Presence Visual -->
+<div class="lg:col-span-4 space-y-12">
+<div class="sticky top-32">
+<div class="glass-card p-8 rounded-xl shadow-2xl">
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-secondary">public</span>
+<h3 class="font-label-sm text-label-sm uppercase tracking-wider text-secondary">Global Presence</h3>
+</div>
+<!-- Map Visual Container -->
+<div class="relative h-64 w-full rounded-lg overflow-hidden bg-surface-container-lowest mb-6 border border-outline-variant/10">
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+<div class="text-center">
+<p class="font-label-sm text-label-sm text-primary/40 uppercase tracking-widest">Architectural Influence Map</p>
+</div>
+</div>
+</div>
+<ul class="space-y-4">
+<li class="flex justify-between items-center border-b border-outline-variant/10 pb-2">
+<span class="font-body-md text-on-surface-variant">North America</span>
+<span class="font-label-sm text-secondary">HQ Operations</span>
+</li>
+<li class="flex justify-between items-center border-b border-outline-variant/10 pb-2">
+<span class="font-body-md text-on-surface-variant">Global FinTech</span>
+<span class="font-label-sm text-secondary">Hybrid Cloud</span>
+</li>
+<li class="flex justify-between items-center">
+<span class="font-body-md text-on-surface-variant">Enterprise SaaS</span>
+<span class="font-label-sm text-secondary">Scale Governance</span>
+</li>
+</ul>
+</div>
+<!-- Meta Data -->
+<div class="mt-8 p-6">
+<div class="text-on-surface font-label-sm text-label-sm flex items-center gap-2 mb-2">
+<span class="w-2 h-2 rounded-full bg-primary-fixed-dim animate-pulse"></span>
+                            Advisory Status: Available
+                        </div>
+<p class="text-on-surface-variant/80 font-body-md leading-relaxed">
+                            Currently architecting high-frequency trading platforms and decentralized enterprise systems.
+                        </p>
+</div>
+</div>
+</div>
+<!-- Timeline Column -->
+<div class="lg:col-span-8 relative">
+<!-- Vertical Line -->
+<div class="absolute left-6 top-0 bottom-0 w-px timeline-line opacity-20 hidden md:block"></div>
+<!-- Timeline Entries -->
+<div class="space-y-12">
+<!-- Oracle -->
+<div class="relative pl-0 md:pl-20 timeline-entry group" onclick="toggleCard(this)">
+<div class="absolute left-[20px] top-4 w-3 h-3 rounded-full dot-glow hidden md:block group-hover:scale-150 transition-transform duration-300"></div>
+<div class="glass-card p-8 rounded-xl cursor-pointer">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
+<div>
+<h2 class="font-headline-md text-headline-md text-primary">Oracle</h2>
+<p class="font-label-sm text-label-sm text-secondary uppercase tracking-widest">Principal Cloud Architect</p>
+</div>
+<div class="font-label-sm text-primary/60 bg-surface-container-highest px-4 py-1 rounded-full self-start md:self-center">
+                                    2021 — PRESENT
+                                </div>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+<div class="bg-surface-container-low p-3 rounded-lg border border-outline-variant/10">
+<p class="text-[10px] font-label-sm text-on-surface-variant uppercase mb-1">Scale</p>
+<p class="font-label-sm text-primary">Global</p>
+</div>
+<div class="bg-surface-container-low p-3 rounded-lg border border-outline-variant/10">
+<p class="text-[10px] font-label-sm text-on-surface-variant uppercase mb-1">Impact</p>
+<p class="font-label-sm text-primary">+22% Efficiency</p>
+</div>
+<div class="bg-surface-container-low p-3 rounded-lg border border-outline-variant/10">
+<p class="text-[10px] font-label-sm text-on-surface-variant uppercase mb-1">Team</p>
+<p class="font-label-sm text-primary">45+ Engineers</p>
+</div>
+<div class="bg-surface-container-low p-3 rounded-lg border border-outline-variant/10">
+<p class="text-[10px] font-label-sm text-on-surface-variant uppercase mb-1">Domain</p>
+<p class="font-label-sm text-primary">OCI Strategy</p>
+</div>
+</div>
+<div class="expand-content">
+<div class="border-t border-outline-variant/20 pt-6 space-y-6">
+<div>
+<h4 class="font-label-sm text-label-sm text-secondary mb-2 uppercase">Key Responsibilities</h4>
+<p class="font-body-md text-on-surface-variant">Orchestrating multi-region cloud infrastructure migrations for Fortune 500 financial clients. Leading technical due diligence and OCI implementation frameworks.</p>
+</div>
+<div>
+<h4 class="font-label-sm text-label-sm text-secondary mb-2 uppercase">Architecture Decisions</h4>
+<p class="font-body-md text-on-surface-variant">Implemented a zero-trust architecture across distributed OCI nodes, significantly reducing lateral movement risks and optimizing egress costs.</p>
+</div>
+<div>
+<h4 class="font-label-sm text-label-sm text-secondary mb-2 uppercase">Tech Stack</h4>
+<div class="flex flex-wrap gap-2 mt-2">
+<span class="chip-glow text-primary-fixed-dim px-3 py-1 rounded-full font-label-sm">OCI</span>
+<span class="chip-glow text-primary-fixed-dim px-3 py-1 rounded-full font-label-sm">Kubernetes</span>
+<span class="chip-glow text-primary-fixed-dim px-3 py-1 rounded-full font-label-sm">Terraform</span>
+<span class="chip-glow text-primary-fixed-dim px-3 py-1 rounded-full font-label-sm">Istio</span>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-4 flex justify-center text-on-surface-variant/40 group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined expand-icon">expand_more</span>
+</div>
+</div>
+</div>
+<!-- California Republic Bank -->
+<div class="relative pl-0 md:pl-20 timeline-entry group" onclick="toggleCard(this)">
+<div class="absolute left-[20px] top-4 w-3 h-3 rounded-full dot-glow hidden md:block group-hover:scale-150 transition-transform duration-300"></div>
+<div class="glass-card p-8 rounded-xl cursor-pointer">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
+<div>
+<h2 class="font-headline-md text-headline-md text-primary">California Republic Bank</h2>
+<p class="font-label-sm text-label-sm text-secondary uppercase tracking-widest">Director of Systems Architecture</p>
+</div>
+<div class="font-label-sm text-primary/60 bg-surface-container-highest px-4 py-1 rounded-full self-start md:self-center">
+                                    2018 — 2021
+                                </div>
+</div>
+<div class="expand-content">
+<div class="border-t border-outline-variant/20 pt-6 space-y-6">
+<div>
+<h4 class="font-label-sm text-label-sm text-secondary mb-2 uppercase">Business Impact</h4>
+<p class="font-body-md text-on-surface-variant">Directed the modernization of core banking systems, achieving 99.99% uptime during the migration phase and reducing operational overhead by 15% YoY.</p>
+</div>
+<div>
+<h4 class="font-label-sm text-label-sm text-secondary mb-2 uppercase">Architecture Decisions</h4>
+<p class="font-body-md text-on-surface-variant">Pioneered a microservices-driven ledger system to replace legacy monolithic processes, enabling real-time transaction processing and enhanced auditability.</p>
+</div>
+<div>
+<h4 class="font-label-sm text-label-sm text-secondary mb-2 uppercase">Tech Stack</h4>
+<div class="flex flex-wrap gap-2 mt-2">
+<span class="chip-glow text-primary-fixed-dim px-3 py-1 rounded-full font-label-sm">Java</span>
+<span class="chip-glow text-primary-fixed-dim px-3 py-1 rounded-full font-label-sm">Spring Boot</span>
+<span class="chip-glow text-primary-fixed-dim px-3 py-1 rounded-full font-label-sm">Kafka</span>
+<span class="chip-glow text-primary-fixed-dim px-3 py-1 rounded-full font-label-sm">Azure</span>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-4 flex justify-center text-on-surface-variant/40 group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined expand-icon">expand_more</span>
+</div>
+</div>
+</div>
+<!-- Entertainment Partners -->
+<div class="relative pl-0 md:pl-20 timeline-entry group" onclick="toggleCard(this)">
+<div class="absolute left-[20px] top-4 w-3 h-3 rounded-full dot-glow hidden md:block group-hover:scale-150 transition-transform duration-300"></div>
+<div class="glass-card p-8 rounded-xl cursor-pointer">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
+<div>
+<h2 class="font-headline-md text-headline-md text-primary">Entertainment Partners</h2>
+<p class="font-label-sm text-label-sm text-secondary uppercase tracking-widest">Lead Infrastructure Engineer</p>
+</div>
+<div class="font-label-sm text-primary/60 bg-surface-container-highest px-4 py-1 rounded-full self-start md:self-center">
+                                    2015 — 2018
+                                </div>
+</div>
+<div class="expand-content">
+<div class="border-t border-outline-variant/20 pt-6 space-y-6">
+<div>
+<h4 class="font-label-sm text-label-sm text-secondary mb-2 uppercase">Responsibilities</h4>
+<p class="font-body-md text-on-surface-variant">Led a specialized team to overhaul the payroll processing engine for major film studios. Ensured SOC2 compliance across all cloud environments.</p>
+</div>
+<div>
+<h4 class="font-label-sm text-label-sm text-secondary mb-2 uppercase">Architecture Decisions</h4>
+<p class="font-body-md text-on-surface-variant">Decoupled data storage from compute resources using S3-backed snowflake clusters, resulting in a 40% reduction in query latency for financial reporting.</p>
+</div>
+<div>
+<h4 class="font-label-sm text-label-sm text-secondary mb-2 uppercase">Tech Stack</h4>
+<div class="flex flex-wrap gap-2 mt-2">
+<span class="chip-glow text-primary-fixed-dim px-3 py-1 rounded-full font-label-sm">AWS</span>
+<span class="chip-glow text-primary-fixed-dim px-3 py-1 rounded-full font-label-sm">Python</span>
+<span class="chip-glow text-primary-fixed-dim px-3 py-1 rounded-full font-label-sm">Docker</span>
+<span class="chip-glow text-primary-fixed-dim px-3 py-1 rounded-full font-label-sm">Redis</span>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-4 flex justify-center text-on-surface-variant/40 group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined expand-icon">expand_more</span>
+</div>
+</div>
+</div>
+<!-- Wipro -->
+<div class="relative pl-0 md:pl-20 timeline-entry group" onclick="toggleCard(this)">
+<div class="absolute left-[20px] top-4 w-3 h-3 rounded-full dot-glow hidden md:block group-hover:scale-150 transition-transform duration-300"></div>
+<div class="glass-card p-8 rounded-xl cursor-pointer">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
+<div>
+<h2 class="font-headline-md text-headline-md text-primary">Wipro</h2>
+<p class="font-label-sm text-label-sm text-secondary uppercase tracking-widest">Senior Solutions Consultant</p>
+</div>
+<div class="font-label-sm text-primary/60 bg-surface-container-highest px-4 py-1 rounded-full self-start md:self-center">
+                                    2012 — 2015
+                                </div>
+</div>
+<div class="expand-content">
+<div class="border-t border-outline-variant/20 pt-6 space-y-6">
+<div>
+<h4 class="font-label-sm text-label-sm text-secondary mb-2 uppercase">Business Impact</h4>
+<p class="font-body-md text-on-surface-variant">Architected digital transformation roadmaps for EMEA retail giants, delivering legacy-to-cloud transitions with zero downtime.</p>
+</div>
+<div>
+<h4 class="font-label-sm text-label-sm text-secondary mb-2 uppercase">Tech Stack</h4>
+<div class="flex flex-wrap gap-2 mt-2">
+<span class="chip-glow text-primary-fixed-dim px-3 py-1 rounded-full font-label-sm">Oracle DB</span>
+<span class="chip-glow text-primary-fixed-dim px-3 py-1 rounded-full font-label-sm">SAP Integration</span>
+<span class="chip-glow text-primary-fixed-dim px-3 py-1 rounded-full font-label-sm">SOA</span>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-4 flex justify-center text-on-surface-variant/40 group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined expand-icon">expand_more</span>
+</div>
+</div>
+</div>
+<!-- Accion Labs -->
+<div class="relative pl-0 md:pl-20 timeline-entry group" onclick="toggleCard(this)">
+<div class="absolute left-[20px] top-4 w-3 h-3 rounded-full dot-glow hidden md:block group-hover:scale-150 transition-transform duration-300"></div>
+<div class="glass-card p-8 rounded-xl cursor-pointer">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
+<div>
+<h2 class="font-headline-md text-headline-md text-primary">Accion Labs</h2>
+<p class="font-label-sm text-label-sm text-secondary uppercase tracking-widest">Systems Engineer</p>
+</div>
+<div class="font-label-sm text-primary/60 bg-surface-container-highest px-4 py-1 rounded-full self-start md:self-center">
+                                    2009 — 2012
+                                </div>
+</div>
+<div class="expand-content">
+<div class="border-t border-outline-variant/20 pt-6 space-y-6">
+<div>
+<h4 class="font-label-sm text-label-sm text-secondary mb-2 uppercase">Key Responsibilities</h4>
+<p class="font-body-md text-on-surface-variant">Early career focus on distributed systems and high-availability server clusters. Developed automated deployment scripts using early configuration management tools.</p>
+</div>
+<div>
+<h4 class="font-label-sm text-label-sm text-secondary mb-2 uppercase">Tech Stack</h4>
+<div class="flex flex-wrap gap-2 mt-2">
+<span class="chip-glow text-primary-fixed-dim px-3 py-1 rounded-full font-label-sm">Linux</span>
+<span class="chip-glow text-primary-fixed-dim px-3 py-1 rounded-full font-label-sm">Shell Scripting</span>
+<span class="chip-glow text-primary-fixed-dim px-3 py-1 rounded-full font-label-sm">MySQL</span>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-4 flex justify-center text-on-surface-variant/40 group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined expand-icon">expand_more</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container border-t border-outline-variant/10 py-20 w-full">
+<div class="max-w-[1200px] mx-auto flex flex-col md:flex-row justify-between items-center px-gutter gap-stack-md">
+<div class="font-headline-md text-headline-md text-primary">Hari Jandhyala</div>
+<div class="font-body-md text-on-surface-variant">© 2024 Hari Jandhyala — Executive Architecture</div>
+<div class="flex gap-8">
+<a class="text-on-surface-variant font-label-sm uppercase tracking-wider hover:text-primary underline-offset-4 hover:underline transition-all duration-200" href="https://www.linkedin.com/in/harivjandhyala/" target="_blank" rel="noopener">LinkedIn</a>
+<a class="text-on-surface-variant font-label-sm uppercase tracking-wider hover:text-primary underline-offset-4 hover:underline transition-all duration-200" href="mailto:jandhyala1000@yahoo.com">Contact</a>
+<a class="text-on-surface-variant font-label-sm uppercase tracking-wider hover:text-primary underline-offset-4 hover:underline transition-all duration-200" href="tel:+19192443997">+1 919-244-3997</a>
+<span class="text-secondary font-label-sm uppercase tracking-wider">Advisory Status: Available</span>
+</div>
+</div>
+</footer>
+<script>
+        function toggleCard(element) {
+            // Close all other cards first (accordion style)
+            const allEntries = document.querySelectorAll('.timeline-entry');
+            allEntries.forEach(entry => {
+                if (entry !== element) {
+                    entry.classList.remove('card-active');
+                    const icon = entry.querySelector('.expand-icon');
+                    if (icon) icon.textContent = 'expand_more';
+                }
+            });
+
+            // Toggle current card
+            element.classList.toggle('card-active');
+            const icon = element.querySelector('.expand-icon');
+            if (icon) {
+                icon.textContent = element.classList.contains('card-active') ? 'expand_less' : 'expand_more';
+            }
+        }
+
+        // Initialize first card as open
+        window.addEventListener('DOMContentLoaded', () => {
+            const firstCard = document.querySelector('.timeline-entry');
+            if (firstCard) {
+                toggleCard(firstCard);
+            }
+        });
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.timeline-entry').forEach(el => {
+            el.classList.add('opacity-0', 'translate-y-10', 'transition-all', 'duration-700');
+            observer.observe(el);
+        });
+    </script>
+
+</div>
+<script>
+  // Ensure fade-in / reveal elements that are already on-screen become visible
+  // immediately when a page is switched to (IntersectionObserver can miss
+  // elements that were display:none at observe-time).
+  window.__refreshObservers = function () {
+    document.querySelectorAll('.app-page.is-active .section-fade-in').forEach(function (el) {
+      var r = el.getBoundingClientRect();
+      if (r.top < window.innerHeight && r.bottom > 0) el.classList.add('visible');
+    });
+    document.querySelectorAll('.app-page.is-active .reveal').forEach(function (el) {
+      var r = el.getBoundingClientRect();
+      if (r.top < window.innerHeight && r.bottom > 0) el.classList.add('active');
+    });
+    document.querySelectorAll('.app-page.is-active .timeline-entry').forEach(function (el) {
+      var r = el.getBoundingClientRect();
+      if (r.top < window.innerHeight && r.bottom > 0) {
+        el.classList.add('opacity-100', 'translate-y-0');
+        el.classList.remove('opacity-0', 'translate-y-10');
+      }
+    });
+  };
+</script>
+<script>
+  // ---------- Simple hash-based page router (Portfolio / Case Studies / Timeline) ----------
+  (function () {
+    var pageMap = {
+      'portfolio': 'page-portfolio',
+      'case-studies': 'page-programs',
+      'timeline': 'page-timeline',
+      'about': 'page-portfolio'
+    };
+
+    function showPage(hash) {
+      var clean = (hash || '#portfolio').replace('#', '');
+      if (!pageMap[clean]) clean = 'portfolio';
+      var targetId = pageMap[clean];
+
+      document.querySelectorAll('.app-page').forEach(function (el) {
+        el.classList.toggle('is-active', el.id === targetId);
+      });
+
+      // Re-run reveal observers for the now-visible page so its fade-ins still trigger
+      requestAnimationFrame(function () {
+        if (window.__refreshObservers) window.__refreshObservers();
+        if (clean === 'about') {
+          var aboutEl = document.getElementById('about');
+          if (aboutEl) aboutEl.scrollIntoView({ behavior: 'smooth' });
+        } else {
+          window.scrollTo({ top: 0, behavior: 'instant' in window ? 'instant' : 'auto' });
+        }
+      });
+    }
+
+    document.addEventListener('click', function (e) {
+      var link = e.target.closest('a.js-route');
+      if (!link) return;
+      var href = link.getAttribute('href') || '';
+      if (href.charAt(0) !== '#') return;
+      e.preventDefault();
+      if (window.location.hash !== href) {
+        window.location.hash = href;
+      } else {
+        showPage(href);
+      }
+    });
+
+    window.addEventListener('hashchange', function () {
+      showPage(window.location.hash);
+    });
+
+    window.addEventListener('DOMContentLoaded', function () {
+      showPage(window.location.hash);
+    });
+  })();
+</script>
+</body>
+</html>
